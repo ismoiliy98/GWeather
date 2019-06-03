@@ -24,7 +24,7 @@ Download the source files and in command line run
 npm install
 ```
 
-To serve application on you local machine run
+To serve application on your local machine run
 
 ```
 npm run serve
@@ -48,7 +48,7 @@ There are variables for API Key (SERVICE_KEY) at the top files.
 
 ## Built With
 
-- [OpenWeatherMap](https://openweathermap.org/api/) - The "OpenWeatherMap API Guide" helps you find useful information, links, documents to start using our weather API services smoothly.
+- [OpenWeatherMap](https://openweathermap.org/api/) - The "OpenWeatherMap API Guide" helps you find useful information, links, documents to start using their weather API services smoothly.
 - [ipgeolocation](https://ipgeolocation.io/documentation.html/) - Free IP Geolocation API and GeoIP Lookup Database
 - [freepik](https://www.freepik.com/free-photos-vectors/icon) - Used to generate weather SVG icons
 
@@ -58,4 +58,4 @@ There are variables for API Key (SERVICE_KEY) at the top files.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
