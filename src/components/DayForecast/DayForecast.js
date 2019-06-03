@@ -20,9 +20,13 @@ const DayForecast = props => {
   const [hourlyWeather, setHourlyWeather] = useState([]);
   const [location, setLocation] = useState([]);
 
+  const today = new Date().getDay();
+  const receivedDay = weekDaysFull.indexOf(props.match.params.day);
+  const forecastIndex =
+    receivedDay - today < 0 ? receivedDay - today + 7 : receivedDay - today;
+
   useEffect(() => {
-    let receivedDay = weekDaysFull.indexOf(props.match.params.day);
-    let max = new Date().getDay() + 4;
+    let max = today + 4;
     let min = 0;
 
     if (max > 6) {
@@ -68,9 +72,7 @@ const DayForecast = props => {
               <span>Min</span>
             </div>
           </div>
-          {hourlyWeather[
-            weekDaysFull.indexOf(props.match.params.day) - new Date().getDay()
-          ].map((value, index) => {
+          {hourlyWeather[forecastIndex].map((value, index) => {
             return (
               <div className="TableRow" key={index}>
                 <img
