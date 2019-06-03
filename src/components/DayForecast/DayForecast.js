@@ -68,24 +68,24 @@ const DayForecast = props => {
               <span>Min</span>
             </div>
           </div>
-          {hourlyWeather[weekDaysFull.indexOf(props.match.params.day)].map(
-            (value, index) => {
-              return (
-                <div className="TableRow" key={index}>
-                  <img
-                    src={require("../../assets/weather_icons/" +
-                      value.icon +
-                      ".svg")}
-                    alt="Weather Icon"
-                  />
-                  <span>{value.time}</span>
-                  <span>{value.temp}&deg;</span>
-                  <span>{value.temp_max}&deg;</span>
-                  <span>{value.temp_min}&deg;</span>
-                </div>
-              );
-            }
-          )}
+          {hourlyWeather[
+            weekDaysFull.indexOf(props.match.params.day) - new Date().getDay()
+          ].map((value, index) => {
+            return (
+              <div className="TableRow" key={index}>
+                <img
+                  src={require("../../assets/weather_icons/" +
+                    value.icon +
+                    ".svg")}
+                  alt="Weather Icon"
+                />
+                <span>{value.time}</span>
+                <span>{value.temp}&deg;</span>
+                <span>{value.temp_max}&deg;</span>
+                <span>{value.temp_min}&deg;</span>
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="Loading">
