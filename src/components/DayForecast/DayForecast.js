@@ -26,15 +26,7 @@ const DayForecast = props => {
     receivedDay - today < 0 ? receivedDay - today + 7 : receivedDay - today;
 
   useEffect(() => {
-    let max = today + 4;
-    let min = 0;
-
-    if (max > 6) {
-      min = max - 6;
-      max = 6;
-    }
-
-    if (receivedDay > max || receivedDay < min) {
+    if (forecastIndex > 4 || forecastIndex < 0) {
       setData({ loaded: true, isAvailable: false });
       return;
     }
